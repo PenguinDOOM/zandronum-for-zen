@@ -1,0 +1,12 @@
+diff -U 3 gdtoaimp.h gdtoaimp.h
+--- gdtoaimp.h	Mon Apr 18 15:47:41 2022
++++ gdtoaimp.h	Sun Apr 17 18:35:04 2022
+@@ -317,6 +317,8 @@
+ 
+ #ifndef __MATH_H__
+ #include "math.h"
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #endif
+ 
+ #ifdef __cplusplus

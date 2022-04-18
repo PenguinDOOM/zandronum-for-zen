@@ -1,0 +1,21 @@
+diff -U 3 sqlite3.c sqlite3.c
+--- sqlite3.c	Mon Apr  4 17:20:45 2022
++++ sqlite3.c	Sun Apr 17 18:38:42 2022
+@@ -31700,6 +31700,8 @@
+ /* #include <stdarg.h> */
+ #ifndef SQLITE_OMIT_FLOATING_POINT
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #endif
+ 
+ /*
+@@ -215360,6 +215362,8 @@
+ 
+ /* #include "fts5Int.h" */
+ #include <math.h>                 /* amalgamator: keep */
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ /*
+ ** Object used to iterate through all "coalesced phrase instances" in

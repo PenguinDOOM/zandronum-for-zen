@@ -1,0 +1,12 @@
+diff -U 3 zstrformat.cpp zstrformat.cpp
+--- zstrformat.cpp	Mon Apr 18 15:47:42 2022
++++ zstrformat.cpp	Sun Apr 17 18:37:50 2022
+@@ -3,6 +3,8 @@
+ #include <stddef.h>
+ #include <stdlib.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "zstring.h"
+ 

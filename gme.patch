@@ -1,0 +1,60 @@
+diff -U 3 Blip_Buffer.cpp Blip_Buffer.cpp
+--- Blip_Buffer.cpp	Mon Apr 18 15:47:41 2022
++++ Blip_Buffer.cpp	Sun Apr 17 18:34:34 2022
+@@ -7,6 +7,8 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ /* Copyright (C) 2003-2006 Shay Green. This module is free software; you
+ can redistribute it and/or modify it under the terms of the GNU Lesser
+diff -U 3 Fir_Resampler.cpp Fir_Resampler.cpp
+--- Fir_Resampler.cpp	Mon Apr 18 15:47:41 2022
++++ Fir_Resampler.cpp	Sun Apr 17 18:34:34 2022
+@@ -6,6 +6,8 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ /* Copyright (C) 2004-2006 Shay Green. This module is free software; you
+ can redistribute it and/or modify it under the terms of the GNU Lesser
+diff -U 3 Vgm_Emu.cpp Vgm_Emu.cpp
+--- Vgm_Emu.cpp	Mon Apr 18 15:47:41 2022
++++ Vgm_Emu.cpp	Sun Apr 17 18:34:34 2022
+@@ -5,6 +5,8 @@
+ #include "blargg_endian.h"
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ /* Copyright (C) 2003-2006 Shay Green. This module is free software; you
+ can redistribute it and/or modify it under the terms of the GNU Lesser
+diff -U 3 Vgm_Emu_Impl.cpp Vgm_Emu_Impl.cpp
+--- Vgm_Emu_Impl.cpp	Mon Apr 18 15:47:41 2022
++++ Vgm_Emu_Impl.cpp	Sun Apr 17 18:34:34 2022
+@@ -3,6 +3,8 @@
+ #include "Vgm_Emu.h"
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <string.h>
+ #include "blargg_endian.h"
+ 
+diff -U 3 Ym2612_Emu.cpp Ym2612_Emu.cpp
+--- Ym2612_Emu.cpp	Mon Apr 18 15:47:41 2022
++++ Ym2612_Emu.cpp	Sun Apr 17 18:34:34 2022
+@@ -10,6 +10,8 @@
+ #include <limits.h>
+ #include <stdio.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ /* Copyright (C) 2002 Stephane Dallongeville (gens AT consolemul.com) */
+ /* Copyright (C) 2004-2006 Shay Green. This module is free software; you
