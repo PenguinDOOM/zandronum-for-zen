@@ -1,0 +1,797 @@
+# HG changeset patch
+# User Penguin <hibi414sa@gmail.com>
+# Date 1650693817 -32400
+#      Sat Apr 23 15:03:37 2022 +0900
+# Node ID 078e61d6ad86659dc6325f19a1e9abcc33ce0ce3
+# Parent  6a5692285856ff99b73161329bb1bb4fa92bd2ca
+Added AMD LibM
+
+diff -r 6a5692285856 -r 078e61d6ad86 dumb/examples/dumb2wav.c
+--- a/dumb/examples/dumb2wav.c	Wed Jan 05 10:41:38 2022 -0500
++++ b/dumb/examples/dumb2wav.c	Sat Apr 23 15:03:37 2022 +0900
+@@ -22,6 +22,8 @@
+ #include <stdio.h>
+ #include <ctype.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <string.h>
+ #include <dumb.h>
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 dumb/examples/dumbout.c
+--- a/dumb/examples/dumbout.c	Wed Jan 05 10:41:38 2022 -0500
++++ b/dumb/examples/dumbout.c	Sat Apr 23 15:03:37 2022 +0900
+@@ -22,6 +22,8 @@
+ #include <stdio.h>
+ #include <ctype.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <string.h>
+ #include <dumb.h>
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 dumb/src/helpers/clickrem.c
+--- a/dumb/src/helpers/clickrem.c	Wed Jan 05 10:41:38 2022 -0500
++++ b/dumb/src/helpers/clickrem.c	Sat Apr 23 15:03:37 2022 +0900
+@@ -19,6 +19,8 @@
+ 
+ #include <stdlib.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include "dumb.h"
+ 
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 dumb/src/helpers/resample.c
+--- a/dumb/src/helpers/resample.c	Wed Jan 05 10:41:38 2022 -0500
++++ b/dumb/src/helpers/resample.c	Sat Apr 23 15:03:37 2022 +0900
+@@ -43,6 +43,8 @@
+  */
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include "dumb.h"
+ 
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 dumb/src/it/itrender.c
+--- a/dumb/src/it/itrender.c	Wed Jan 05 10:41:38 2022 -0500
++++ b/dumb/src/it/itrender.c	Sat Apr 23 15:03:37 2022 +0900
+@@ -18,6 +18,8 @@
+  */
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <stdlib.h>
+ 
+ #include "dumb.h"
+diff -r 6a5692285856 -r 078e61d6ad86 dumb/src/it/read669.c
+--- a/dumb/src/it/read669.c	Wed Jan 05 10:41:38 2022 -0500
++++ b/dumb/src/it/read669.c	Sat Apr 23 15:03:37 2022 +0900
+@@ -20,6 +20,8 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "dumb.h"
+ #include "internal/it.h"
+diff -r 6a5692285856 -r 078e61d6ad86 dumb/src/it/readasy.c
+--- a/dumb/src/it/readasy.c	Wed Jan 05 10:41:38 2022 -0500
++++ b/dumb/src/it/readasy.c	Sat Apr 23 15:03:37 2022 +0900
+@@ -20,6 +20,8 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "dumb.h"
+ #include "internal/it.h"
+diff -r 6a5692285856 -r 078e61d6ad86 dumb/src/it/readmod.c
+--- a/dumb/src/it/readmod.c	Wed Jan 05 10:41:38 2022 -0500
++++ b/dumb/src/it/readmod.c	Sat Apr 23 15:03:37 2022 +0900
+@@ -20,6 +20,8 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "dumb.h"
+ #include "internal/it.h"
+diff -r 6a5692285856 -r 078e61d6ad86 dumb/src/it/readmtm.c
+--- a/dumb/src/it/readmtm.c	Wed Jan 05 10:41:38 2022 -0500
++++ b/dumb/src/it/readmtm.c	Sat Apr 23 15:03:37 2022 +0900
+@@ -20,6 +20,8 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "dumb.h"
+ #include "internal/it.h"
+diff -r 6a5692285856 -r 078e61d6ad86 dumb/src/it/readokt.c
+--- a/dumb/src/it/readokt.c	Wed Jan 05 10:41:38 2022 -0500
++++ b/dumb/src/it/readokt.c	Sat Apr 23 15:03:37 2022 +0900
+@@ -20,6 +20,8 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "dumb.h"
+ #include "internal/it.h"
+diff -r 6a5692285856 -r 078e61d6ad86 dumb/src/it/readoldpsm.c
+--- a/dumb/src/it/readoldpsm.c	Wed Jan 05 10:41:38 2022 -0500
++++ b/dumb/src/it/readoldpsm.c	Sat Apr 23 15:03:37 2022 +0900
+@@ -20,6 +20,8 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "dumb.h"
+ #include "internal/it.h"
+diff -r 6a5692285856 -r 078e61d6ad86 dumb/src/it/readxm.c
+--- a/dumb/src/it/readxm.c	Wed Jan 05 10:41:38 2022 -0500
++++ b/dumb/src/it/readxm.c	Sat Apr 23 15:03:37 2022 +0900
+@@ -20,6 +20,8 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "dumb.h"
+ #include "internal/it.h"
+diff -r 6a5692285856 -r 078e61d6ad86 dumb/src/sigtypes/sequence.c
+--- a/dumb/src/sigtypes/sequence.c	Wed Jan 05 10:41:38 2022 -0500
++++ b/dumb/src/sigtypes/sequence.c	Sat Apr 23 15:03:37 2022 +0900
+@@ -18,6 +18,8 @@
+  */
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <stdlib.h>
+ #include <string.h>
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 game-music-emu/gme/Blip_Buffer.cpp
+--- a/game-music-emu/gme/Blip_Buffer.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/game-music-emu/gme/Blip_Buffer.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -7,6 +7,8 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ /* Copyright (C) 2003-2006 Shay Green. This module is free software; you
+ can redistribute it and/or modify it under the terms of the GNU Lesser
+diff -r 6a5692285856 -r 078e61d6ad86 game-music-emu/gme/Fir_Resampler.cpp
+--- a/game-music-emu/gme/Fir_Resampler.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/game-music-emu/gme/Fir_Resampler.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -6,6 +6,8 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ /* Copyright (C) 2004-2006 Shay Green. This module is free software; you
+ can redistribute it and/or modify it under the terms of the GNU Lesser
+diff -r 6a5692285856 -r 078e61d6ad86 game-music-emu/gme/Vgm_Emu.cpp
+--- a/game-music-emu/gme/Vgm_Emu.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/game-music-emu/gme/Vgm_Emu.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -5,6 +5,8 @@
+ #include "blargg_endian.h"
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ /* Copyright (C) 2003-2006 Shay Green. This module is free software; you
+ can redistribute it and/or modify it under the terms of the GNU Lesser
+diff -r 6a5692285856 -r 078e61d6ad86 game-music-emu/gme/Vgm_Emu_Impl.cpp
+--- a/game-music-emu/gme/Vgm_Emu_Impl.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/game-music-emu/gme/Vgm_Emu_Impl.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -3,6 +3,8 @@
+ #include "Vgm_Emu.h"
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <string.h>
+ #include "blargg_endian.h"
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 game-music-emu/gme/Ym2612_Emu.cpp
+--- a/game-music-emu/gme/Ym2612_Emu.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/game-music-emu/gme/Ym2612_Emu.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -10,6 +10,8 @@
+ #include <limits.h>
+ #include <stdio.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ /* Copyright (C) 2002 Stephane Dallongeville (gens AT consolemul.com) */
+ /* Copyright (C) 2004-2006 Shay Green. This module is free software; you
+diff -r 6a5692285856 -r 078e61d6ad86 masterserver/network.cpp
+--- a/masterserver/network.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/masterserver/network.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -57,6 +57,8 @@
+ 
+ #include <ctype.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "../src/huffman/huffman.h"
+ #include "network.h"
+diff -r 6a5692285856 -r 078e61d6ad86 rcon_utility/zstrformat.cpp
+--- a/rcon_utility/zstrformat.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/rcon_utility/zstrformat.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -3,6 +3,8 @@
+ #include <stddef.h>
+ #include <stdlib.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "zstring.h"
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 src/c_bind.cpp
+--- a/src/c_bind.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/c_bind.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -49,6 +49,8 @@
+ #include "p_acs.h"
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <stdlib.h>
+ 
+ /* Default keybindings for Doom (and all other games)
+diff -r 6a5692285856 -r 078e61d6ad86 src/c_cmds.cpp
+--- a/src/c_cmds.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/c_cmds.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -35,6 +35,8 @@
+ */
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <time.h>
+diff -r 6a5692285856 -r 078e61d6ad86 src/c_console.cpp
+--- a/src/c_console.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/c_console.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -37,6 +37,8 @@
+ #include <stdarg.h>
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <stdlib.h>
+ #include <time.h>
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 src/c_expr.cpp
+--- a/src/c_expr.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/c_expr.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -37,6 +37,8 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <string.h>
+ 
+ #include "c_dispatch.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/d_main.cpp
+--- a/src/d_main.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/d_main.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -47,6 +47,8 @@
+ 
+ #include <time.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <assert.h>
+ #include <sys/stat.h>
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 src/d_netinfo.cpp
+--- a/src/d_netinfo.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/d_netinfo.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -33,6 +33,8 @@
+ */
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <assert.h>
+diff -r 6a5692285856 -r 078e61d6ad86 src/gl/system/gl_system.h
+--- a/src/gl/system/gl_system.h	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/gl/system/gl_system.h	Sat Apr 23 15:03:37 2022 +0900
+@@ -36,6 +36,8 @@
+ #define CALLBACK
+ #endif
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <float.h>
+ #include <limits.h>
+ #include <stdlib.h>
+@@ -72,7 +74,7 @@
+ #include <OpenGL/OpenGL.h>
+ #elif defined(__unix__)
+ #include <GL/glew.h>
+-#include "gl/api/glext.h"
++//#include "gl/api/glext.h"
+ #else // !__APPLE__ && !__unix__
+ #include <GL/gl.h>
+ #include <GL/glu.h>
+diff -r 6a5692285856 -r 078e61d6ad86 src/gl/utility/gl_cycler.cpp
+--- a/src/gl/utility/gl_cycler.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/gl/utility/gl_cycler.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -34,6 +34,8 @@
+ */
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include "gl/utility/gl_cycler.h"
+ 
+ //==========================================================================
+diff -r 6a5692285856 -r 078e61d6ad86 src/gl/utility/gl_geometric.cpp
+--- a/src/gl/utility/gl_geometric.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/gl/utility/gl_geometric.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -1,6 +1,8 @@
+ 
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <float.h>
+ #include "gl/utility/gl_geometric.h"
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 src/m_cheat.cpp
+--- a/src/m_cheat.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/m_cheat.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -24,6 +24,8 @@
+ 
+ #include <stdlib.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "m_cheat.h"
+ #include "d_player.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/network.cpp
+--- a/src/network.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/network.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -66,6 +66,8 @@
+ 
+ #include <ctype.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <list>
+ #include "../GeoIP/GeoIP.h"
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 src/networkheaders.h
+--- a/src/networkheaders.h	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/networkheaders.h	Sat Apr 23 15:03:37 2022 +0900
+@@ -98,6 +98,8 @@
+ 
+ #include <ctype.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ // [BB] This is necessary under Linux, otherwise things like DWORD aren't defined.
+ #ifndef __WIN32__
+diff -r 6a5692285856 -r 078e61d6ad86 src/networkshared.h
+--- a/src/networkshared.h	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/networkshared.h	Sat Apr 23 15:03:37 2022 +0900
+@@ -60,6 +60,8 @@
+ #include <time.h>
+ #include <ctype.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ //--------------------------------------------------------------------------------------------------------------------------------------------------
+ //-- DEFINES ---------------------------------------------------------------------------------------------------------------------------------------
+diff -r 6a5692285856 -r 078e61d6ad86 src/nodebuild.cpp
+--- a/src/nodebuild.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/nodebuild.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -43,6 +43,8 @@
+ #include <string.h>
+ #include <stdio.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "doomdata.h"
+ #include "nodebuild.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/oplsynth/OPL3.cpp
+--- a/src/oplsynth/OPL3.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/oplsynth/OPL3.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -44,6 +44,8 @@
+  */
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <limits>
+ 
+ #include "doomtype.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/oplsynth/dosbox/opl.cpp
+--- a/src/oplsynth/dosbox/opl.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/oplsynth/dosbox/opl.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -28,6 +28,8 @@
+ #include "../opl.h"
+ #include "../muslib.h"
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include "m_random.h"
+ 
+ static FRandom pr_opl;
+diff -r 6a5692285856 -r 078e61d6ad86 src/oplsynth/fmopl.cpp
+--- a/src/oplsynth/fmopl.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/oplsynth/fmopl.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -99,6 +99,8 @@
+ #include <string.h>
+ #include <stdarg.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ //#include "driver.h"		/* use M.A.M.E. */
+ #include "opl.h"
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 src/oplsynth/opl_mus_player.cpp
+--- a/src/oplsynth/opl_mus_player.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/oplsynth/opl_mus_player.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -4,6 +4,8 @@
+ #include <string.h>
+ #include <assert.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "opl_mus_player.h"
+ #include "doomtype.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/p_glnodes.cpp
+--- a/src/p_glnodes.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/p_glnodes.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -31,6 +31,8 @@
+ **
+ */
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #ifdef _MSC_VER
+ #include <malloc.h>		// for alloca()
+ #endif
+diff -r 6a5692285856 -r 078e61d6ad86 src/p_map.cpp
+--- a/src/p_map.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/p_map.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -24,6 +24,8 @@
+ 
+ #include <stdlib.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "templates.h"
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 src/p_setup.cpp
+--- a/src/p_setup.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/p_setup.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -24,6 +24,8 @@
+ 
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #ifdef _MSC_VER
+ #include <malloc.h>		// for alloca()
+ #endif
+diff -r 6a5692285856 -r 078e61d6ad86 src/r_data/colormaps.cpp
+--- a/src/r_data/colormaps.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/r_data/colormaps.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -35,6 +35,8 @@
+ #include <stddef.h>
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <float.h>
+ 
+ #include "i_system.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/r_main.cpp
+--- a/src/r_main.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/r_main.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -27,6 +27,8 @@
+ 
+ #include <stdlib.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ // [BB] network.h has to be included before stats.h under Linux.
+ // The reason should be investigated.
+diff -r 6a5692285856 -r 078e61d6ad86 src/r_polymost.cpp
+--- a/src/r_polymost.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/r_polymost.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -69,6 +69,8 @@
+ #include <stdlib.h>
+ #include <assert.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include "doomtype.h"
+ #include "r_polymost.h"
+ #include "c_cvars.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/r_utility.cpp
+--- a/src/r_utility.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/r_utility.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -27,6 +27,8 @@
+ 
+ #include <stdlib.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "templates.h"
+ #include "doomdef.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/sdl/i_system.cpp
+--- a/src/sdl/i_system.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/sdl/i_system.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -47,6 +47,8 @@
+ 
+ #include "doomerrors.h"
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "SDL.h"
+ #include "doomtype.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/sound/i_sound.cpp
+--- a/src/sound/i_sound.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/sound/i_sound.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -59,6 +59,8 @@
+ 
+ #include "doomtype.h"
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #ifndef NO_SOUND
+ #include "fmodsound.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/sound/music_dumb.cpp
+--- a/src/sound/music_dumb.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/sound/music_dumb.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -22,6 +22,8 @@
+ // HEADER FILES ------------------------------------------------------------
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include "i_musicinterns.h"
+ #include "doomtype.h"
+ #include "doomdef.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/tables.h
+--- a/src/tables.h	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/tables.h	Sat Apr 23 15:03:37 2022 +0900
+@@ -38,6 +38,8 @@
+ 
+ #include <stdlib.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include "basictypes.h"
+ 
+ #ifndef PI
+diff -r 6a5692285856 -r 078e61d6ad86 src/thingdef/thingdef_function.cpp
+--- a/src/thingdef/thingdef_function.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/thingdef/thingdef_function.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -38,6 +38,8 @@
+ */
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "tables.h"
+ #include "tarray.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/timidity/instrum.cpp
+--- a/src/timidity/instrum.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/timidity/instrum.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -27,6 +27,8 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "timidity.h"
+ #include "m_swap.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/timidity/instrum_dls.cpp
+--- a/src/timidity/instrum_dls.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/timidity/instrum_dls.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -24,6 +24,8 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "timidity.h"
+ #include "doomdef.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/timidity/instrum_sf2.cpp
+--- a/src/timidity/instrum_sf2.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/timidity/instrum_sf2.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -2,6 +2,8 @@
+ #include <string.h>
+ #include <errno.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "doomdef.h"
+ #include "m_swap.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/timidity/mix.cpp
+--- a/src/timidity/mix.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/timidity/mix.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -22,6 +22,8 @@
+ */
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 src/timidity/playmidi.cpp
+--- a/src/timidity/playmidi.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/timidity/playmidi.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -25,6 +25,8 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "timidity.h"
+ #include "c_cvars.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/timidity/resample.cpp
+--- a/src/timidity/resample.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/timidity/resample.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -22,6 +22,8 @@
+ */
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 src/v_font.cpp
+--- a/src/v_font.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/v_font.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -77,6 +77,8 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <ctype.h>
+ 
+ #include "templates.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/v_palette.cpp
+--- a/src/v_palette.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/v_palette.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -35,6 +35,8 @@
+ #include <stddef.h>
+ #include <string.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <float.h>
+ #ifdef _WIN32
+ #include <io.h>
+diff -r 6a5692285856 -r 078e61d6ad86 src/vectors.h
+--- a/src/vectors.h	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/vectors.h	Sat Apr 23 15:03:37 2022 +0900
+@@ -41,6 +41,8 @@
+ #define VECTORS_H
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <string.h>
+ 
+ #ifndef PI
+diff -r 6a5692285856 -r 078e61d6ad86 src/win32/g15/include/LCDStreamingText.cpp
+--- a/src/win32/g15/include/LCDStreamingText.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/win32/g15/include/LCDStreamingText.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -18,6 +18,8 @@
+ #include "lcdwin32.h"
+ #include "LCDStreamingText.h"
+ //#include <math.h>
++//#define REPLACE_WITH_AMDLIBM
++//#include <amdlibm.h>
+ 
+ //************************************************************************
+ //
+diff -r 6a5692285856 -r 078e61d6ad86 src/win32/i_main.cpp
+--- a/src/win32/i_main.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/win32/i_main.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -60,6 +60,8 @@
+ #include <stdio.h>
+ #include <stdarg.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #define USE_WINDOWS_DWORD
+ #include "doomerrors.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/win32/i_system.cpp
+--- a/src/win32/i_system.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/win32/i_system.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -59,6 +59,8 @@
+ #include "hardware.h"
+ #include "doomerrors.h"
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "doomtype.h"
+ #include "version.h"
+diff -r 6a5692285856 -r 078e61d6ad86 src/zstrformat.cpp
+--- a/src/zstrformat.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/src/zstrformat.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -86,6 +86,8 @@
+ #include <stddef.h>
+ #include <stdlib.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <stdlib.h>
+ #include <locale.h>
+ 
+diff -r 6a5692285856 -r 078e61d6ad86 statsmaker/collector.cpp
+--- a/statsmaker/collector.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/statsmaker/collector.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -58,6 +58,8 @@
+ #include "network.h"
+ 
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ #include <time.h>
+ 
+ //--------------------------------------------------------------------------------------------------------------------------------------------------
+diff -r 6a5692285856 -r 078e61d6ad86 statsmaker/network.cpp
+--- a/statsmaker/network.cpp	Wed Jan 05 10:41:38 2022 -0500
++++ b/statsmaker/network.cpp	Sat Apr 23 15:03:37 2022 +0900
+@@ -58,6 +58,8 @@
+ 
+ #include <ctype.h>
+ #include <math.h>
++#define REPLACE_WITH_AMDLIBM
++#include <amdlibm.h>
+ 
+ #include "../src/huffman/huffman.h"
+ #include "main.h"
